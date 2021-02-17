@@ -1,0 +1,16 @@
+# PORT
+server:
+  port: 8080
+
+# DATABASE CONFIG
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
