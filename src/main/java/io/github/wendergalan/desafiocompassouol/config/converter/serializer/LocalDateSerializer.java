@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import static io.github.wendergalan.desafiocompassouol.utility.Utility.DATE_FORMAT;
 
@@ -14,7 +14,7 @@ import static io.github.wendergalan.desafiocompassouol.utility.Utility.DATE_FORM
 /**
  * The type Local date time serializer.
  */
-public class LocalDateSerializer extends JsonSerializer<LocalDateTime> {
+public class LocalDateSerializer extends JsonSerializer<LocalDate> {
 
     /**
      * @param value
@@ -24,7 +24,7 @@ public class LocalDateSerializer extends JsonSerializer<LocalDateTime> {
      * @throws JsonProcessingException
      */
     @Override
-    public void serialize(LocalDateTime value, JsonGenerator generator, SerializerProvider serializers) throws IOException, JsonProcessingException {
+    public void serialize(LocalDate value, JsonGenerator generator, SerializerProvider serializers) throws IOException, JsonProcessingException {
         generator.writeString(value.format(DATE_FORMAT));
     }
 }

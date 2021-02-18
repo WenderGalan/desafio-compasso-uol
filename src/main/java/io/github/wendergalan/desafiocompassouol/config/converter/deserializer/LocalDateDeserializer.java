@@ -6,14 +6,14 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import static io.github.wendergalan.desafiocompassouol.utility.Utility.DATE_FORMAT;
 
 /**
  * The type Local date time deserializer.
  */
-public class LocalDateDeserializer extends JsonDeserializer<LocalDateTime> {
+public class LocalDateDeserializer extends JsonDeserializer<LocalDate> {
 
     /**
      * @param parser
@@ -23,7 +23,7 @@ public class LocalDateDeserializer extends JsonDeserializer<LocalDateTime> {
      * @throws JsonProcessingException
      */
     @Override
-    public LocalDateTime deserialize(JsonParser parser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
-        return LocalDateTime.parse(parser.getValueAsString(), DATE_FORMAT);
+    public LocalDate deserialize(JsonParser parser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+        return LocalDate.parse(parser.getValueAsString(), DATE_FORMAT);
     }
 }
