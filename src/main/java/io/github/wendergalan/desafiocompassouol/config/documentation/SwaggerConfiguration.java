@@ -25,11 +25,11 @@ public class SwaggerConfiguration {
      * @return the docket
      */
     @Bean
-    public Docket personApi2() {
+    public Docket compassoUolApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .groupName("DESAFIO COMPASSO UOL")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("wendergalan.github.io.desafiocompassouol.api.resource"))
+                .apis(RequestHandlerSelectors.basePackage("io.github.wendergalan.desafiocompassouol.api.resource"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
