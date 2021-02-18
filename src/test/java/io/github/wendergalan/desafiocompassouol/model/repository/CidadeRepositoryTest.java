@@ -31,7 +31,7 @@ public class CidadeRepositoryTest {
         Cidade cidade = criarNovaCidade(nome, "Mato Grosso do Sul");
         entityManager.persist(cidade);
 
-        List<Cidade> cidades = repository.findAllByNomeIgnoreCaseContaining("Campo");
+        List<Cidade> cidades = repository.findAllByNomeIgnoreCaseContaining(nome);
 
         assertThat(cidades).hasSize(1);
         assertThat(cidades).contains(cidade);
@@ -63,7 +63,7 @@ public class CidadeRepositoryTest {
 
     @Test
     @DisplayName("Deve salvar uma cidade.")
-    public void saveBookTest() {
+    public void saveCityTest() {
         Cidade city = criarNovaCidade();
 
         Cidade cidadeSalva = repository.save(city);
