@@ -24,11 +24,11 @@ public class Cidade implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     @NotNull
     private String nome;
 
-    @Column(name = "estado")
+    @Column(name = "estado", nullable = false)
     @NotNull
     private String estado;
 

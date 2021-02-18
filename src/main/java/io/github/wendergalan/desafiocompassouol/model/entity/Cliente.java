@@ -7,7 +7,6 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.Period;
 
 @Data
 @AllArgsConstructor
@@ -25,23 +24,23 @@ public class Cliente implements Serializable {
     @EqualsAndHashCode.Include
     private Long id;
 
-    @Column(name = "nome")
+    @Column(name = "nome", nullable = false)
     @NotNull
     private String nome;
 
-    @Column(name = "sexo")
+    @Column(name = "sexo", nullable = false)
     @NotNull
     private Sexo sexo;
 
-    @Column(name = "nascimento")
+    @Column(name = "nascimento", nullable = false)
     @NotNull
     private LocalDate nascimento;
 
-    @Column(name = "idade")
+    @Column(name = "idade", nullable = false)
     @NotNull
     private int idade;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_cidade", referencedColumnName = "id")
+    @JoinColumn(name = "id_cidade", referencedColumnName = "id", nullable = false)
     private Cidade cidade;
 }
