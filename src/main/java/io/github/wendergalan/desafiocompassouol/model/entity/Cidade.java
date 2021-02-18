@@ -13,7 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Builder
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@With
 @Entity
 @Table(name = "cidade", schema = "public")
 public class Cidade implements Serializable {

@@ -13,7 +13,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 @Builder
-@EqualsAndHashCode
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@With
 @Entity
 @Table(name = "cliente", schema = "public")
 public class Cliente implements Serializable {
