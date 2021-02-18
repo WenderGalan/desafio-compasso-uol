@@ -11,6 +11,8 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import static io.github.wendergalan.desafiocompassouol.utility.Constants.PASSWORD;
+import static io.github.wendergalan.desafiocompassouol.utility.Constants.USERNAME;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
 @Configuration
@@ -27,7 +29,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
      */
     @Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication().withUser("admin").password("{noop}admin").roles("ADMIN");
+        auth.inMemoryAuthentication().withUser(USERNAME).password("{noop}" + PASSWORD).roles("ADMIN");
     }
 
     @Override
