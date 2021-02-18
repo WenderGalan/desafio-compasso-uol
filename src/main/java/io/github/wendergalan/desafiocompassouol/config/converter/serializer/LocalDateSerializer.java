@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
-import static io.github.wendergalan.desafiocompassouol.util.Util.DATE_FORMAT;
+import static io.github.wendergalan.desafiocompassouol.utility.Utility.DATE_FORMAT;
 
 
 /**
