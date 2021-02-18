@@ -4,6 +4,8 @@ server:
 
 # DATABASE CONFIG
 spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
   h2:
     console:
       enabled: true
@@ -13,4 +15,4 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        show_sql: true
+        show_sql: false
