@@ -42,6 +42,7 @@ public class Cliente implements Serializable {
     private int idade;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @NotNull
     @JoinColumn(name = "id_cidade", referencedColumnName = "id", nullable = false)
     private Cidade cidade;
 }
