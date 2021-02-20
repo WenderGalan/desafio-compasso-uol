@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>io.github.wendergalan</groupId>
 	<artifactId>desafio-compasso-uol</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>desafio-compasso-uol</name>
 	<description>Desafio Compasso UOL para vaga de desevolvedor back-end Pleno/Sênior.</description>
 	<properties>
