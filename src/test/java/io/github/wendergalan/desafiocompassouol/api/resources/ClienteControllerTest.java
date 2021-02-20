@@ -175,7 +175,7 @@ public class ClienteControllerTest {
     @DisplayName("Deve atualizar um cliente.")
     public void updateClientTest() throws Exception {
         Long id = 11L;
-        String json = new ObjectMapper().writeValueAsString(criarNovoClienteDto());
+        String json = objectMapper().writeValueAsString(criarNovoClienteDto());
 
         Cliente clienteAtualizando = Cliente.builder().id(id).nome("Algum nome").idade(24).build();
         BDDMockito.given(service.getById(anyLong()))
@@ -202,7 +202,7 @@ public class ClienteControllerTest {
     @Test
     @DisplayName("Deve retornar 404 ao tentar atualizar um cliente inexistente.")
     public void updateInexistentClientTest() throws Exception {
-        String json = new ObjectMapper().writeValueAsString(criarNovoClienteDto());
+        String json = objectMapper().writeValueAsString(criarNovoClienteDto());
         BDDMockito.given(service.getById(anyLong()))
                 .willReturn(Optional.empty());
 
