@@ -50,6 +50,10 @@ public class ClienteController {
 
     @GetMapping("/{id}")
     @ApiOperation("Obtém os detalhes do cliente.")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Ok"),
+            @ApiResponse(code = 404, message = "Not Found")
+    })
     public ClienteDTO getById(@PathVariable Long id) {
         return service
                 .getById(id)
@@ -60,6 +64,10 @@ public class ClienteController {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiOperation("Deleta o cliente pelo o ID")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Ok"),
+            @ApiResponse(code = 404, message = "Not Found")
+    })
     public void delete(@PathVariable Long id) {
         Cliente cliente = service
                 .getById(id)
@@ -69,6 +77,10 @@ public class ClienteController {
 
     @PutMapping("/{id}")
     @ApiOperation("Atualiza um cliente (Só atualiza o nome e a idade).")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "Ok"),
+            @ApiResponse(code = 404, message = "Not Found")
+    })
     public ClienteDTO update(@PathVariable Long id, ClienteDTO dto) {
         return service
                 .getById(id)
@@ -83,6 +95,7 @@ public class ClienteController {
 
     @GetMapping("/search")
     @ApiOperation("Busca o cliente por nome")
+    @ApiResponses({@ApiResponse(code = 200, message = "Ok")})
     public List<ClienteDTO> findClientByName(@RequestParam("nome") String nome) {
         return service.findAllByNome(nome)
                 .stream()
