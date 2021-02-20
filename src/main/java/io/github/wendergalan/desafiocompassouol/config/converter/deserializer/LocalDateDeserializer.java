@@ -8,7 +8,8 @@ import com.fasterxml.jackson.databind.JsonDeserializer;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static io.github.wendergalan.desafiocompassouol.utility.Utility.DATE_FORMAT;
+import static io.github.wendergalan.desafiocompassouol.utility.Constants.DATE_FORMAT;
+
 
 /**
  * The type Local date time deserializer.
