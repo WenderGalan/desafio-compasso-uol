@@ -81,7 +81,7 @@ public class ClienteController {
             @ApiResponse(code = 200, message = "Ok"),
             @ApiResponse(code = 404, message = "Not Found")
     })
-    public ClienteDTO update(@PathVariable Long id, ClienteDTO dto) {
+    public ClienteDTO update(@PathVariable Long id, @Valid @RequestBody ClienteDTO dto) {
         return service
                 .getById(id)
                 .map(book -> {

@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  desafio-compasso-uol:
+    image: back-end-casa-facil
+    container_name: desafio-compasso-uol
+    restart: on-failure
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    command: mvn spring-boot:run

@@ -81,7 +81,7 @@ public class CidadeController {
             @ApiResponse(code = 200, message = "Ok"),
             @ApiResponse(code = 404, message = "Not Found")
     })
-    public CidadeDTO update(@PathVariable Long id, CidadeDTO dto) {
+    public CidadeDTO update(@PathVariable Long id, @Valid @RequestBody CidadeDTO dto) {
         return service
                 .getById(id)
                 .map(book -> {
