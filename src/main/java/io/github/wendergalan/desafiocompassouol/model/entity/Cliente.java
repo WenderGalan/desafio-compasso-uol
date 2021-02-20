@@ -1,10 +1,10 @@
 package io.github.wendergalan.desafiocompassouol.model.entity;
 
-import com.sun.istack.NotNull;
 import io.github.wendergalan.desafiocompassouol.model.enums.Sexo;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 
