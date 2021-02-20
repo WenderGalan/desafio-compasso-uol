@@ -164,4 +164,23 @@ public class CidadeServiceTest {
 
         Mockito.verify(repository, Mockito.never()).save(cidade);
     }
+
+    @Test
+    @DisplayName("Deve atualizar uma cidade")
+    public void updateCityTest() {
+        Long id = 11L;
+
+        Cidade cidadeParaAtualizar = criarNovaCidade().withId(id);
+
+        Cidade cidadeAtualizado = criarNovaCidade();
+        cidadeAtualizado.setId(id);
+
+        when(repository.save(cidadeParaAtualizar)).thenReturn(cidadeAtualizado);
+
+        Cidade cidade = service.update(cidadeParaAtualizar);
+
+        assertThat(cidade.getId()).isEqualTo(cidadeParaAtualizar.getId());
+        assertThat(cidade.getNome()).isEqualTo(cidadeParaAtualizar.getNome());
+        assertThat(cidade.getEstado()).isEqualTo(cidadeParaAtualizar.getEstado());
+    }
 }
